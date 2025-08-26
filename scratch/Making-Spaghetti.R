@@ -34,7 +34,7 @@ df_long <- All_df %>%
   
 small_df <- df_long %>% 
   select(sample_id, sample_date, ions, water_concen) %>% 
-  rename(site = sample_id ,
+  rename(basin = sample_id ,
          date = sample_date)
 
 ggplot(data = small_df, aes(x = date, y = water_concen)) +

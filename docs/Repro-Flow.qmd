@@ -15,7 +15,7 @@ Streamwater sampling at QT was discontinued in November 1987 and reinitiated imm
 library(here)
 library(tidyverse)
 
-Q1 <- read.csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
+Q1 <- read_csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
 
 Q2 <- read_csv(here("data", "QuebradaCuenca2-Bisley.csv" ))
 Q3 <- read_csv(here("data", "QuebradaCuenca2-Bisley.csv"))
