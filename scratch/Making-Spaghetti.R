@@ -37,6 +37,9 @@ small_df <- df_long %>%
   rename(site = sample_id ,
          date = sample_date)
 
+ggplot(data = small_df, aes(x = date, y = water_concen)) +
+  geom_line(aes(color = site)) +
+  facet_wrap(~ions)
 
   
   
