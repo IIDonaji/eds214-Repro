@@ -5,12 +5,15 @@ editor: visual
 ---
 
 ## Background
+
 ```{r}
 
 ```
 
 ## Data
+
 To recreate figure 3 from Shaefer et al. (2000) paper I download the following `.csv` from the ***Environmental Data Initiative*** found in the following link: (McDowell and INternational Institute Of Tropical Forest (IITF) 2024)
+
 ```{r}
 # Quebrada one-Bisley (Q1) Chemistry Data
 
@@ -30,6 +33,7 @@ MPRM <- read_csv(here("data", "RioMameyesPuenteRoto.csv"))
 ```
 
 ## Methods
+
 ```{r}
 # wrangling data-frames
 combo_chemi_data <- rbind(Q1, Q2, Q3, MPRM) %>% 
@@ -51,7 +55,7 @@ stream_water_chemi <- combo_chemi_data %>%
 ```
 
 ## Results
+
 ```{r}
 
 ```
-
