@@ -42,21 +42,10 @@ stream_water_chemi <- combo_chemi_data %>%
   pivot_longer(cols = c(k, no3_n, mg, ca, nh4_n), 
                names_to = "ions",
                values_to = "water_conc") %>% 
-  rename(basins = sample_id) %>% 
-  select(basin, year, ions, water_concen) %>% 
-  filter(year >= "1988-01-10", year <= "1994-07-31")
+  rename(basins = sample_id) 
 
 # Analysis: calculated the 9wk average
 
-strearrange(year,ions) %>% 
-  group_by(ions, basins) %>% 
-  mutate(conc_aver = sapply(
-    year,
-    moving_average,
-    dates = year,
-    conc = water_concen,
-    win_size_wks = 9 
-  ))
 
 
 ```
