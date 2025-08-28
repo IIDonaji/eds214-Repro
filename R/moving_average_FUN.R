@@ -1,5 +1,6 @@
 # Function
 # add disciptive details
+
 moving_average <- function(focal_date, dates, conc, win_size_wks) {
   is_in_window <- (dates > focal_date - (win_size_wks / 2) * 7) &
     (dates < focal_date + (win_size_wks /2) *7)
