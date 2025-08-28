@@ -1,0 +1,68 @@
+---
+title: "Draft"
+format: html
+editor: visual
+---
+
+## Background
+```{r}
+
+```
+
+## Data
+To recreate figure 3 from Shaefer et al. (2000) paper I download the following `.csv` from the ***Environmental Data Initiative*** found in the following link: (McDowell and INternational Institute Of Tropical Forest (IITF) 2024)
+```{r}
+# Quebrada one-Bisley (Q1) Chemistry Data
+
+Q1 <- read_csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
+
+# Quebrada two-Bisley (Q2) Chemistry Data  
+Q2 <- read_csv(here("data", "QuebradaCuenca2-Bisley.csv" ))
+
+
+# Quebrada three-Bisley (Q3) Chemistry Data  
+Q3 <- read_csv(here("data", "QuebradaCuenca3-Bisley.csv"))
+
+
+# Puente Roto Mameyes (MPR) Chemistry Data
+
+MPRM <- read_csv(here("data", "RioMameyesPuenteRoto.csv"))
+```
+
+## Methods
+```{r}
+# wrangling data-frames
+combo_chemi_data <- rbind(Q1, Q2, Q3, MPRM) %>% 
+  mutate(Sample_Date = ymd(Sample_Date)) %>% 
+  clean_names() %>%  # to lower case
+  
+# more data cleaning
+  
+stream_water_chemi <- combo_chemi_data %>% 
+  pivot_longer(cols = c(k, no3_n, mg, ca, nh4_n), 
+               names_to = "ions",
+               values_to = "water_conc") %>% 
+  rename(basins = sample_id) %>% 
+  select(basin, year, ions, water_concen) %>% 
+  filter(year >= "1988-01-10", year <= "1994-07-31")
+
+# Analysis: calculated the 9wk average
+
+strearrange(year,ions) %>% 
+  group_by(ions, basins) %>% 
+  mutate(conc_aver = sapply(
+    year,
+    moving_average,
+    dates = year,
+    conc = water_concen,
+    win_size_wks = 9 
+  ))
+
+
+```
+
+## Results
+```{r}
+
+```
+

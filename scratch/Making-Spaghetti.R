@@ -13,7 +13,7 @@ library(dplyr)
 
 source("R/rolling_aver_FUN.R")
 
-# reading in the data needed for analisation 
+# reading in the data needed for analyzation 
 Q1 <- read_csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
 names(Q1)
 class(Q1$Sample_Date)
