@@ -39,7 +39,7 @@ names(PRM)
 
 # found a shorter method, rbind() for vertical combination
 
-all_df <- rbind(Q1, Q2, Q3, PRM) %>% 
+all_df <- rbind(Q1, Q2, Q3, MPRM) %>% 
   mutate(Sample_Date = ymd(Sample_Date)) %>% 
   clean_names()
 
@@ -58,7 +58,7 @@ df_long <- all_df %>%
 source("R/moving_average_FUN.R")
 small_df <- df_long %>% # checking data using skim(small_df)
   filter(!is.na("no3_n")) %>% 
-  select(basin, year, ions, water_concen) %>% 
+  select(basins, year, ions, water_concen) %>% 
   filter(year >= "1988-01-10", year < "1994-07-31") %>%
   arrange(year,ions) %>% 
   
@@ -75,18 +75,18 @@ view(small_df)
 
 # used a 3 variable plot to see relationships in the data
 ggplot(data = small_df, aes(x = year, y = water_concen)) +
-  geom_line(aes(color = basin)) +
+  geom_line(aes(color = basins)) +
   facet_wrap(~ions)
 
 # Calculate 9- week rolling average
 
 tidy_Hurri <- df_long %>% # checking data using skim(small_df)
   filter(!is.na("no3_n")) %>% 
-  select(basin, year, ions, water_concen) %>% 
+  select(basins, year, ions, water_concen) %>% 
   filter(year >= "1988-01-12", year < "1994-07-26") %>%
   arrange(year,ions) %>% 
   
-  group_by(ions, basin) %>% 
+  group_by(ions, basins) %>% 
   mutate(conc_aver = sapply(
     year,
     moving_average,
@@ -104,10 +104,14 @@ tidy_Hurri <- df_long %>% # checking data using skim(small_df)
 # plotting ( can pipe this to full code above)
 ggplot(data = tidy_Hurri, aes(x = year, 
                               y = conc_aver)) +
-  #geom_smooth(color = "gray5") +
-  geom_line(aes(color = basin)) +
-  #geom_vline(xintercept = as.Date(year %in% "1989-18-09"),
-             #libetype = "dash") +
-  facet_wrap(~ions,
+  labs(y = "Average Concentration of Nutrient",
+       title = "Title here",
+       x = "Year",
+       color = "Basins")+
+  geom_line(aes(color = basins)) +
+  geom_vline(xintercept = as.Date("1989-09-10"),
+             linetype = "dotdash") +
+  facet_wrap(ions~ .,
              ncol = 1,
-             scales = "free-y")
+             scales = "free_y")+
+  theme_bw()

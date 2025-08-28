@@ -17,7 +17,7 @@ Not met. Currently its in the paper qmd and apparently they want it in its own s
 Met! It's all in data folder!
 
 ## Intermediate outputs are created and saved in a separate folder from raw data 
-Met! Looks like your'e not touching that data folder at all which is good
+Met! Looks like you're not touching that data folder at all which is good
 
 ##At least one piece of functionality has been refactored into a function in its own file
 Not quite met. I see you have two functions in your R folder which is great, however it looks like you still have to refactor possibly. Let me know if im wrong on this one because I very well could be.
