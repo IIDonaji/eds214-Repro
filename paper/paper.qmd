@@ -34,7 +34,7 @@ MPRM <- read_csv(here("data", "RioMameyesPuenteRoto.csv"))
 # wrangling data-frames
 combo_chemi_data <- rbind(Q1, Q2, Q3, MPRM) %>% 
   mutate(Sample_Date = ymd(Sample_Date)) %>% 
-  clean_names() %>%  # to lower case
+  clean_names()  # to lower case
   
 # more data cleaning
   
