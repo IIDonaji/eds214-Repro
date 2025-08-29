@@ -17,6 +17,7 @@ library(dplyr)
 library(ARTofR)
 
 # Reading in the data needed for analysis 
+
 # Quebrada one-Bisley (Q1) Chemistry Data
 Q1 <- read_csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
 names(Q1) # checking column names
@@ -77,7 +78,7 @@ small_df <- df_long %>% # checking data using skim(small_df)
  
 view(small_df) # checking my data to see if it made my rolling average column 
 
-# used a 3 variable plot to see relationships in the data
+# used a 3 variable plot to see relationships in the data before using the function
 ggplot(data = small_df, aes(x = year, y = water_concen)) +
   geom_line(aes(color = basins)) +
   facet_wrap(~ions)
