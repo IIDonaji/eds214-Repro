@@ -63,6 +63,7 @@ After cloning the repo on Workbench:
 [NY] Running the environment initialization script installs all required packages
 
 - I don't see a script that installs the packages needed for your analysis
+[M] made a environment initalization script
 
 [M] The analysis script runs without errors
 

@@ -2,7 +2,8 @@
 ##                          Environment Initialization                         ##
 ################################################################################
 
-# Package Installations used to run this analysis 
+# The following Packages need to be installed to run this analysis 
+# Run this first
 intall.packages("here")
 install.packages("tidyverse")
 install.packages("janitor")

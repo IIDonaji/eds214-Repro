@@ -9,6 +9,7 @@ chunk_output_type: console
 #| warning: false
 #| message: false
 #| include: false 
+
 library(tidyverse)
 ```
 
@@ -19,7 +20,7 @@ Schaefer and colleagues investigated how water quality is affected following a h
 Here is my attempt in reproducing **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358)
 
 ```{r}
-
+# Calling in the data made 
 stream_anly <- readRDS("../outputs/stream_anly.rds")
 
 ```
