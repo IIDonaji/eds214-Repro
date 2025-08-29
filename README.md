@@ -27,19 +27,19 @@ Firstly, make sure you have R installed with the following packages;
 To run the analyses, clone this repository.
 This GitHub repository contains all of the code associated with the project and the figure produced by this code.
 
-Inside the following can be found
+Inside the following can be found;
 
--  [1_clean_data.R](eds214-Repro/1_clean_data.R) 
+-  [1_clean_data.R](https://github.com/IIDonaji/eds214-Repro/blob/3558ebb07ed4468eb3d0d3b50aaa8919114f908a/1_clean_data.R) 
 contains all library needed, cleaned data-frames, and analysis
 
-- [data](data/data)
+- [data](https://github.com/IIDonaji/eds214-Repro/tree/3558ebb07ed4468eb3d0d3b50aaa8919114f908a/data)
 contains the raw data used to perform this analysis 
 
 
-- [outputs](outputs/stream_anly.rds)
+- [outputs](https://github.com/IIDonaji/eds214-Repro/tree/3558ebb07ed4468eb3d0d3b50aaa8919114f908a/outputs)
 the model object
 
-- [R](R/moving_average_FUN.R)
+- [R](https://github.com/IIDonaji/eds214-Repro/tree/3558ebb07ed4468eb3d0d3b50aaa8919114f908a/R)
 the function created to calculate the moving average. 
 
 ### Data
