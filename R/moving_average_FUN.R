@@ -1,5 +1,6 @@
 # Function
-# The following function calculates a moving average for a 9 week window
+
+# The following function calculates a moving average for a 9 week window 
 
 moving_average <- function(focal_date, dates, conc, win_size_wks) {
   is_in_window <- (dates > focal_date - (win_size_wks / 2) * 7) &

@@ -2,79 +2,42 @@
 title: "Draft"
 format: html
 editor: visual
+editor_options: 
+  chunk_output_type: console
 ---
 
 ## Background
 
-```{r}
-library(here)
-library(tidyverse)
-library(janitor)
-library(skimr)
-library(lubridate)
-library(patchwork)
-library(dplyr)
-library(ARTofR)
-```
 
 ## Data
 
-To recreate figure 3 from Shaefer et al. (2000) paper I download the following `.csv` from the ***Environmental Data Initiative*** found in the following link: (McDowell and INternational Institute Of Tropical Forest (IITF) 2024)
-
-```{r}
-# Quebrada one-Bisley (Q1) Chemistry Data
-
-Q1 <- read_csv(here("data", "QuebradaCuenca1-Bisley.csv" ))
-
-# Quebrada two-Bisley (Q2) Chemistry Data  
-Q2 <- read_csv(here("data", "QuebradaCuenca2-Bisley.csv" ))
+To recreate figure 3 from Shaefer et al. (2000) paper I download the following `.csv` from the ***Environmental Data Initiative*** found in the following: [(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)] (https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064)
 
 
-# Quebrada three-Bisley (Q3) Chemistry Data  
-Q3 <- read_csv(here("data", "QuebradaCuenca3-Bisley.csv"))
-
-
-# Puente Roto Mameyes (MPR) Chemistry Data
-
-MPRM <- read_csv(here("data", "RioMameyesPuenteRoto.csv"))
-```
 
 ## Methods
-
 ```{r}
-# wrangling data-frames
-combo_chemi_data <- rbind(Q1, Q2, Q3, MPRM) %>% 
-  mutate(Sample_Date = ymd(Sample_Date)) %>% 
-  clean_names()  # to lower case
-  
-# more data cleaning
-  
-stream_water_chemi <- combo_chemi_data %>% 
-  pivot_longer(cols = c(k, no3_n, mg, ca, nh4_n), 
-               names_to = "ions",
-               values_to = "water_conc") %>% 
-  rename(basins = sample_id)
-
-# Analysis: calculated the 9wk moving average
-
-stream_anly <- stream_water_chemi %>% 
-select(basin, year, ions, water_concen) %>% 
-  filter(year >= "1988-01-10", year < "1994-07-31") %>%
-  arrange(year,ions) %>%
-  group_by(ions, basins) %>% 
-  mutate(conc_aver = sapply(
-    year,
-    moving_average,
-    dates = year,
-    conc = water_concen,
-    win_size_wks = 9 
-  ))
- 
-
+source("R/moving_average_FUN.R")
 ```
+
 
 ## Results
 
 ```{r}
+water_plot <- ggplot(data = stream_anly, aes(x = sample_date, 
+                            y = conc_aver)) +
 
+  labs(y = "Average Concentration of Nutrient",
+       title = "Concentration in Bisley, Puerto Rico streams before and after Hurrican Hugo",
+       x = "Year",
+       color = "Basins")+
+  geom_line(aes(color = basins)) +
+  geom_vline(xintercept = as.Date("1989-09-18"),
+             linetype = "dotdash") +
+  facet_wrap(ions~ .,
+             ncol = 1,
+             scales = "free_y")+
+  theme_bw()
+water_plot
+ggsave("figs/water_plot.png")
 ```
