@@ -5,6 +5,13 @@ editor: visual
 chunk_output_type: console
 ---
 
+```{r}
+#| warning: false
+#| message: false
+#| include: false 
+library(tidyverse)
+```
+
 ## Background
 
 Schaefer and colleagues investigated how water quality is affected following a hurricane. By analyzing long-term weekly records of stream water chemistry from before and after Hurricane Hugo in 1989, in Puerto Rico's Luquillo Mountains they discovered that nutrient levels, particularly potassium and nitrogen, showed a more significant and lasting impact than canopy gaps. These nutrients increased sharply after the disturbance and remained elevated for several years Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358).
@@ -12,10 +19,6 @@ Schaefer and colleagues investigated how water quality is affected following a h
 Here is my attempt in reproducing **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358)
 
 ```{r}
-#| warning: false
-#| message: false
-#| include: false 
-library(tidyverse)
 
 stream_anly <- readRDS("../outputs/stream_anly.rds")
 
