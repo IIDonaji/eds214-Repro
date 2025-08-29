@@ -9,8 +9,8 @@ chunk_output_type: console
 
 ```{r}
 
- source("../1_clean_data.R")
-# source("../outputs/stream_anly.rds")
+# source("../1_clean_data.R")
+ source("../outputs/stream_anly.rds")
 
 ```
 
