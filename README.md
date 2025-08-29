@@ -29,7 +29,8 @@ To run the analyses, clone this repository.
 This GitHub repository contains all of the code associated with the project and the figure produced by this code.
 
 Inside the following can be found;
-- [0_init_Envi.R](https://github.com/IIDonaji/eds214-Repro/blob/cc25bc219aad7c6fe0ffc0f6ba6debcc2f0ed713/0_init_envi.R)
+
+- [0_init_Envi.R](https://github.com/IIDonaji/eds214-Repro/blob/cc25bc219aad7c6fe0ffc0f6ba6debcc2f0ed713/0_init_envi.R) This has all the `install.packages(packagename)` to run this analysis
 
 -  [1_clean_data.R](https://github.com/IIDonaji/eds214-Repro/blob/3558ebb07ed4468eb3d0d3b50aaa8919114f908a/1_clean_data.R) 
 contains all library needed, cleaned data-frames, and analysis
