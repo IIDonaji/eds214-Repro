@@ -1,6 +1,22 @@
-# Function
-
-# The following function calculates a moving average for a 9 week window 
+#' The following function calculates a 9-week moving-average window
+#'
+#' @param focal_date 
+#' @param dates 
+#' @param conc 
+#' @param win_size_wks 
+#'
+#' @returns Stream-water concentration before and after Hurricane Hugo (1989)
+#' @export
+#'
+#' @examples
+#'  mutate(conc_aver = sapply(
+#'           sample_date,
+#'           moving_average,
+#'          dates = sample_date,
+#'           conc = water_conc,
+#'             win_size_wks = 9 
+#'                            )
+#' 
 
 moving_average <- function(focal_date, dates, conc, win_size_wks) {
   is_in_window <- (dates > focal_date - (win_size_wks / 2) * 7) &

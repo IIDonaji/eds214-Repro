@@ -43,7 +43,7 @@ stream_water_chemi <- combo_chemi_data %>%
                values_to = "water_conc") %>% 
   rename(basins = sample_id) # changed to basins to clarify their location
 
-# Analysis: calculating the 9wk moving average
+# Analysis: calculating the 9-week moving average
 
 stream_anly <- stream_water_chemi %>% 
   select(basins, sample_date, ions, water_conc) %>% 

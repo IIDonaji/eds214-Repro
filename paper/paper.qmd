@@ -1,38 +1,49 @@
 ---
-title: "Draft"
+title: "Reproducing Schaefer et al.(2000) Figure 3."
 format: html
 editor: visual
-editor_options: 
 chunk_output_type: console
 ---
 
+## Background
+
+Schaefer and colleagues investigated how water quality is affected following a hurricane. By analyzing long-term weekly records of stream water chemistry from before and after Hurricane Hugo in 1989, in Puerto Rico's Luquillo Mountains they discovered that nutrient levels, particularly potassium and nitrogen, showed a more significant and lasting impact than canopy gaps. These nutrients increased sharply after the disturbance and remained elevated for several years Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358).
+
+Here is my attempt in reproducing **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358)
 
 ```{r}
+#| warning: false
+#| message: false
+#| include: false 
+library(tidyverse)
 
-# source("../1_clean_data.R")
- source("../outputs/stream_anly.rds")
+stream_anly <- readRDS("../outputs/stream_anly.rds")
 
 ```
 
-## Background
-Schaefer and colleague investigated how water quality is affected following a hurricane.By analyzing long-term weekly records of stream water chemistry from before and after Hurricane Hugo in 1989, in Puerto Rico's Luquillo Mountains they discovered that nutrient levels, particularly potassium and nitrogen, showed a more significant and lasting impact than canopy gaps. These nutrients increased sharply after the disturbance and remained elevated for several years. Schaefer et al.[(200)](https://doi.org/10.1017/s0266467400001358) 
-
-Here is my attempt to reproducing **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358) 
-
 ## Data
 
-To recreate **Figure 3.**, I downloaded the following `.csv` files from the ***Environmental Data Initiative***, available at the following link: [(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)](https://doi.org/10.1017/s0266467400001358)
+To recreate **Figure 3.**, I downloaded the following `.csv` files from the ***Environmental Data Initiative***, available at the following link: [(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)](https://doi.org/10.1017/s0266467400001358). 
+
+Based on the information from the paper on Figure 3. I uploaded the following files into my computer. 
+
+- Quebrada one-Bisley (Q1) Chemistry Data
+- Quebrada one-Bisley (Q2) Chemistry Data
+- Quebrada one-Bisley (Q3) Chemistry Data
+- Puente Roto Mameyes (MPR) Chemistry Data
+
+
 
 ## Methods
-[**Flowchart**](images/workflowimage.png)
 
+![**Flowchart**](workflowimage.png)
 
 ## Results
-The graph below presents a time-series plot of the 9-week moving average stream water concentration before and after the Hurricane Hugo distribution offering additional contrast among watersheds and ions. Schaefer et al.(2000)
-The dotted vertical line represents the date of the hurricane impact. 
+
+The graph below presents a time-series plot of the 9-week moving average stream water concentration before and after the Hurricane Hugo distribution offering additional contrast among watersheds and ions. Schaefer et al.(2000) The dotted vertical line represents the date of the hurricane impact.
 
 ```{r}
-#|Eecho: False
+#| echo: False
 
 water_plot <- ggplot(data = stream_anly, aes(x = sample_date, 
                             y = conc_aver)) +

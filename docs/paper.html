@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Draft</title>
+<title>Reproducing Schaefer et al.(2000) Figure 3.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Draft</h1>
+<h1 class="title">Reproducing Schaefer et al.(2000) Figure 3.</h1>
 </div>
 
 
@@ -63,16 +63,42 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background"><strong>Background</strong></h2>
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>Schaefer and colleagues investigated how water quality is affected following a hurricane. By analyzing long-term weekly records of stream water chemistry from before and after Hurricane Hugo in 1989, in Puerto Rico’s Luquillo Mountains they discovered that nutrient levels, particularly potassium and nitrogen, showed a more significant and lasting impact than canopy gaps. These nutrients increased sharply after the disturbance and remained elevated for several years Schaefer et al.<a href="https://doi.org/10.1017/s0266467400001358">(2000)</a>.</p>
+<p>Here is my attempt in reproducing <strong>Figure 3.</strong> from Schaefer et al.<a href="https://doi.org/10.1017/s0266467400001358">(2000)</a></p>
 </section>
 <section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data"><strong>Data</strong></h2>
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>To recreate <strong>Figure 3.</strong>, I downloaded the following <code>.csv</code> files from the <strong><em>Environmental Data Initiative</em></strong>, available at the following link: <a href="https://doi.org/10.1017/s0266467400001358">(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)</a>.</p>
+<p>Based on the information from the paper on Figure 3. I uploaded the following files into my computer.</p>
+<ul>
+<li>Quebrada one-Bisley (Q1) Chemistry Data</li>
+<li>Quebrada one-Bisley (Q2) Chemistry Data</li>
+<li>Quebrada one-Bisley (Q3) Chemistry Data</li>
+<li>Puente Roto Mameyes (MPR) Chemistry Data</li>
+</ul>
 </section>
 <section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods"><strong>Methods</strong></h2>
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="workflowimage.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Flowchart</strong></figcaption>
+</figure>
+</div>
 </section>
 <section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results"><strong>Results</strong></h2>
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The graph below presents a time-series plot of the 9-week moving average stream water concentration before and after the Hurricane Hugo distribution offering additional contrast among watersheds and ions. Schaefer et al.(2000) The dotted vertical line represents the date of the hurricane impact.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="paper_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
 
 </main>
