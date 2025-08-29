@@ -3,23 +3,23 @@ title: "Draft"
 format: html
 editor: visual
 editor_options: 
-  chunk_output_type: console
+chunk_output_type: console
 ---
 
 ## Background
+Schaefer and colleague investigated how water quality is affected following a hurricane.By analyzing long-term weekly records of stream water chemistry from before and after Hurricane Hugo in 1989, in Puerto Rico's Luquillo Mountains they discovered that nutrient levels, particularly potassium and nitrogen, showed a more significant and lasting impact than canopy gaps. These nutrients increased sharply after the disturbance and remained elevated for several years. Schaefer et al.[(200)](https://doi.org/10.1017/s0266467400001358) 
 
+Here is my attempt to reproducing **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358) 
 
 ## Data
 
-To recreate figure 3 from Shaefer et al. (2000) paper I download the following `.csv` from the ***Environmental Data Initiative*** found in the following: [(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)] (https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-luq.20.4923064)
-
-
+To recreate **Figure 3.**, I downloaded the following `.csv` files from the ***Environmental Data Initiative***, available at the following link: [(McDowell and INternational Institute Of Tropical Forest (IITF) 2024)](https://doi.org/10.1017/s0266467400001358)
 
 ## Methods
+![**Flowchart**](images/workflowimage.png)
 ```{r}
 source("R/moving_average_FUN.R")
 ```
-
 
 ## Results
 
@@ -39,5 +39,4 @@ water_plot <- ggplot(data = stream_anly, aes(x = sample_date,
              scales = "free_y")+
   theme_bw()
 water_plot
-ggsave("figs/water_plot.png")
 ```

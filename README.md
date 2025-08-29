@@ -1,9 +1,9 @@
 # ***Building Analytical Workflow for Scientific Reproducibility***
 
 ## Goal
-![**Figure 3.**](images/Schaeferet.alfig3.png)
+![**Figure 3.** Reproduced from Schaefer et al. (2000).](images/Schaeferet.alfig3.png)
 
-Recreate Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358) figure 3. A time-series plot of a 9-week moving-average of streamwater concentration before and after 1989 Hurricane Hugo disturbance, based on long-term stream water quality observations in Puerto Rico.
+Recreate **Figure 3.** from Schaefer et al.[(2000)](https://doi.org/10.1017/s0266467400001358) study. This time-series plot shows a 9-week moving average of streamwater concentrations before and after the 1989 Hurricane Hugo disturbance, based on long-term stream water quality observations in the Luquillo Mountains, Puerto Rico. 
 
 ## How to replicate this analyses
 ![**Flowchart**](images/workflowimage.png)
@@ -47,5 +47,4 @@ The data used in this analysis are available through the ***Environmental Data I
 
 
 ### Citation
-
 Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000. “Effects of Hurricane Disturbance on Stream Water Concentrations and Fluxes in Eight Tropical Forest Watersheds of the Luquillo Experimental Forest, Puerto Rico.” Journal of Tropical Ecology 16 (2): 189–207. <https://doi.org/10.1017/s0266467400001358>
