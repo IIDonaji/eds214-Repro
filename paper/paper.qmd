@@ -17,11 +17,14 @@ To recreate **Figure 3.**, I downloaded the following `.csv` files from the ***E
 
 ## Methods
 ![**Flowchart**](images/workflowimage.png)
+
 ```{r}
-source("R/moving_average_FUN.R")
+source("outputs/stream_anly.rds")
 ```
 
 ## Results
+The graph below presents a time-series plot of the 9-week moving average stream water concentration before and after the Huricane Hugo distribution offering additional contrast among watersheds and ions. Schaefer et al.(2000)
+The dotted vertical line represents the date of the hurricane impact. 
 
 ```{r}
 water_plot <- ggplot(data = stream_anly, aes(x = sample_date, 
