@@ -51,6 +51,7 @@ https://github.com/IIDonaji/eds214-Repro/issues/15#issue-3364703159
 [M] **The README includes a flowchart and text explaining how the analysis works**
 
 - Your flowchart is clean and well structured, but too general to exceed the spec. It should be about your analysis specifically.
+- I didn't see any changes to your flowchart, so I can't mark this as exceeds spec.
 
 [M] **The code is appropriately commented**
 
@@ -60,10 +61,10 @@ https://github.com/IIDonaji/eds214-Repro/issues/15#issue-3364703159
 
 After cloning the repo on Workbench:
 
-[NY] Running the environment initialization script installs all required packages
+[M] Running the environment initialization script installs all required packages
 
 - I don't see a script that installs the packages needed for your analysis
-[M] made a environment initalization script
+- Looks good now!
 
 [M] The analysis script runs without errors
 
